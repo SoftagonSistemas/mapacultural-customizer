@@ -19,7 +19,7 @@ A seguir, apresentaremos o processo de instalação detalhado para cada caso, ga
 - Em seguida, clone o plugin no diretório utilizando o seguinte comando: 
 
 ```shell
-git clone https://github.com/ElljSistemas/plugin-OneClick.git OneClick
+git clone https://github.com/SoftagonSistemas/mapacultural-customizer.git OneClick
 ```
 ### Configurar o plugin
 _Essa configuração é válida tanto para o ambiente MapasCore quanto para o BaseProject._
