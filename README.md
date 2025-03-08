@@ -68,4 +68,4 @@ mapas:
 
 ## Como utilizar
 
-Para uma documentação de uso mais abrangente acesse https://github.com/SoftagonSistemas/mapacultural-customizer
+Para uma documentação de uso mais abrangente acesse https://elljsistemas.gitbook.io/plugin-oneclick
