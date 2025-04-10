@@ -50,7 +50,7 @@ app.component('oc-socialmedia', {
 
 
             for(item of this.socialmedia) {
-                this.socialmediaData[item] = this.entity.socialmediaData?.[item] || {};
+                this.socialmediaData[item] = this.entity.socialmediaData?.[item] || "";
             }
 
             this.entity.socialmediaData = this.socialmediaData;

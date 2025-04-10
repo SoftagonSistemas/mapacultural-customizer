@@ -30,3 +30,21 @@ ul {
         margin-top: 150px;
     }
 }
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: size(8);
+    margin: 0;
+    width: 100%;
+    
+    &__length {
+        text-align: right;
+        margin-right: size(10);
+        margin-top: size(-28);
+        font-size: 0.875rem;
+        font-style: italic;
+        color: rgb(93.75, 93.75, 93.75);
+    }
+    
+}
