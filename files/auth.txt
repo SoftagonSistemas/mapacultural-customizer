@@ -1,1 +1,0 @@
-{"google-recaptcha-secret":"6LdcGRsrAAAAADDG5DqYJbw5EPqvV__IHuAiuWdz","google-recaptcha-sitekey":"6LdcGRsrAAAAACVM1jcwyc7oCctRBM-BQQ3Sc-Xk"}

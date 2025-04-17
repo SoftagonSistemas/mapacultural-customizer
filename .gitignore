@@ -4,3 +4,4 @@ assets/js/app.js
 mix-manifest.json
 node_modules/
 assets/css/plugin-OneClick.css
+files/auth.txt
