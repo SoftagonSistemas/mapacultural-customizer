@@ -183,6 +183,14 @@ class Plugin extends \MapasCulturais\Plugin
     public function setRecaptchaSettings(?Settings $settings, App $app): void
     {
         $auth = [];
+        $auth['isRecaptchaActive'] = $settings->isRecaptchaActive === "active" ? $settings->isRecaptchaActive : "inactive";
+        $file_path = PRIVATE_FILES_PATH."OneClick/files";
+        $file_name = "auth.txt";
+
+        if (!is_dir($file_path)) {
+            mkdir($file_path, 0777, true);
+        }
+
         if($settings->isRecaptchaActive === "active" && $settings->recaptcha_sitekey && $settings->recaptcha_secret) {
             if ($settings->recaptcha_secret) {
                 $auth['google-recaptcha-secret'] = $settings->recaptcha_secret;
@@ -193,7 +201,7 @@ class Plugin extends \MapasCulturais\Plugin
             }
         }
 
-        file_put_contents(__DIR__ . "/files/auth.txt", json_encode($auth));
+        file_put_contents("{$file_path}/{$file_name}", json_encode($auth));
     }
 
     /**
