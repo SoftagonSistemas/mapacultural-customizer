@@ -1,1 +1,1 @@
-{"google-recaptcha-secret":"6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe","google-recaptcha-sitekey":"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+{"google-recaptcha-secret":"6LdcGRsrAAAAADDG5DqYJbw5EPqvV__IHuAiuWdz","google-recaptcha-sitekey":"6LdcGRsrAAAAACVM1jcwyc7oCctRBM-BQQ3Sc-Xk"}

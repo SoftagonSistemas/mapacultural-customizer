@@ -1,6 +1,8 @@
 app.component('configuration-steps', {
     template: $TEMPLATES['configuration-steps'],
-
+    components: {
+        VueRecaptcha
+    },
     setup() {
         const text = Utils.getTexts('configuration-steps')
         const messages = useMessages();
@@ -55,6 +57,13 @@ app.component('configuration-steps', {
         }
     },
     methods: {
+        saveRecaptcha(actions) {
+            actions.save();
+
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        },
         sendEmailTest() {
             this.isLoading = true;
             const api = new API();

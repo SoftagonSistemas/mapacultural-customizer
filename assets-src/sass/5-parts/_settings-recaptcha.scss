@@ -1,3 +1,9 @@
 .settings-recaptcha {
     width: 100%;
+
+    .recaptcha-settings-filds {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
 }

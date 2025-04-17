@@ -58,6 +58,15 @@ $metadata = [
         ]
     ],
     // Configurações iniciais - reCaptcha
+    'isRecaptchaActive' => [
+        'label' => i::__('Ativar reCAPTCHA em todo site?'),
+        'type' => 'radio',
+        'options' => [
+            'active' => i::__('Sim'),
+            'inactive' => i::__('Não'),
+        ],
+        'default' => 'inactive'
+    ],
     'recaptcha_secret' => [
         'label' => i::__('Chave secreta'),
         'type' => 'string',

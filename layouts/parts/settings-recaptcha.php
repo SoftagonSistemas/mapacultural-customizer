@@ -22,11 +22,22 @@ $this->import('
         </template>
     </oc-dialog>
     <div class="grid-12">
-        <entity-field :entity="entity" prop="recaptcha_sitekey" class="col-6"></entity-field>
-        <entity-field :entity="entity" prop="recaptcha_secret" class="col-6"></entity-field>
+        <div class="col-6 recaptcha-settings-filds">
+            <entity-field :entity="entity" prop="isRecaptchaActive" @click="entity.save()" class="col-6"></entity-field>
+            <entity-field :entity="entity" prop="recaptcha_sitekey" class="col-6"></entity-field>
+            <entity-field :entity="entity" prop="recaptcha_secret" class="col-6"></entity-field>
+        </div>
+        <div class="col-6">
+            <i><small><?= i::__('Se tudo correr bem, ao recarregar a página, o reCAPTCHA irá aparecer aqui. Basta, então, responder <b>Sim</b> à pergunta <b>Ativar reCAPTCHA em todo o site?</b> para que ele seja ativado para as demais páginas.') ?></small></i> <br><br>
+            <VueRecaptcha :sitekey="entity.recaptcha_sitekey" class="g-recaptcha"></VueRecaptcha>
+        </div>
     </div>
 
     <div class="btn-entity-actions">
-        <oc-actions :entity="entity" editable></oc-actions>
+        <oc-actions :entity="entity" editable>
+            <template #default="{actions}">
+                <button class="button button--primary" @click="saveRecaptcha(actions)"><span><?= i::__('Salvar e recarregar') ?></span></button>
+            </template>
+        </oc-actions>
     </div>
 </div>

@@ -26,7 +26,12 @@ class Plugin extends \MapasCulturais\Plugin
 
         $self = $this;
 
+        $app->hook('GET(settings.<<*>>)', function() use($app) {
+            $app->view->enqueueScript('app-v2', 'OneClick-v2', 'https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit');
+        });
+
         $app->view->enqueueStyle('app-v2', 'OneClick-v2', 'css/plugin-OneClick.css');
+        
 
         $driver = $app->em->getConfiguration()->getMetadataDriverImpl();
         $driver->addPaths([__DIR__]);
@@ -178,17 +183,17 @@ class Plugin extends \MapasCulturais\Plugin
     public function setRecaptchaSettings(?Settings $settings, App $app): void
     {
         $auth = [];
-        if ($settings->recaptcha_secret) {
-            $auth['google-recaptcha-secret'] = $settings->recaptcha_secret;
+        if($settings->isRecaptchaActive === "active" && $settings->recaptcha_sitekey && $settings->recaptcha_secret) {
+            if ($settings->recaptcha_secret) {
+                $auth['google-recaptcha-secret'] = $settings->recaptcha_secret;
+            }
+    
+            if ($settings->recaptcha_sitekey) {
+                $auth['google-recaptcha-sitekey'] = $settings->recaptcha_sitekey;
+            }
         }
 
-        if ($settings->recaptcha_sitekey) {
-            $auth['google-recaptcha-sitekey'] = $settings->recaptcha_sitekey;
-        }
-
-        if ($settings->recaptcha_sitekey && $settings->recaptcha_secret) {
-            file_put_contents(__DIR__ . "/files/auth.txt", json_encode($auth));
-        }
+        file_put_contents(__DIR__ . "/files/auth.txt", json_encode($auth));
     }
 
     /**
